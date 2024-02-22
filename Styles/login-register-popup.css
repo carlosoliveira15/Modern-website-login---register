@@ -1,4 +1,4 @@
-#login-popup {
+#login-register-popup {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,6 +17,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    transition: transform 0.5s ease, height .2s ease;
+    transform: scale(0);
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+
+.wrapper .icon-close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #0a151f;
+    font-size: 2em;
+    color: #fff;
+    border-radius: 0 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
 }
 
 .form-box {
@@ -24,9 +57,26 @@
     padding: 40px
 }
 
+.wrapper .login {
+    transform: translateX(0);
+    transition: transform 0.18s ease;
+
+}
+
+.wrapper .register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transform: translateX(0);
+    transition: transform 0.18s ease;
+}
+
 .form-box h2 {
     font-size: 2em;
-    color: #0e1a24;
+    color: #0a151f;
     text-align: center;
 }
 
@@ -76,7 +126,7 @@
 
 .remember-forgot {
     font-size: 0.9em;
-    color: #0a151f;
+    color: #041322;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -84,7 +134,7 @@
 }
 
 .remember-forgot label input {
-    accent-color: #0a151f;
+    accent-color: #041424;
     margin-right: 4px;
 }
 
@@ -101,7 +151,7 @@
     height: 45px;
     border: none;
     border-radius: 6px;
-    background: #0a151f;
+    background: #041424;
     color: white;
     font-size: 1em;
     font-weight: 600;
@@ -112,21 +162,22 @@
 
 .btn:hover {
     background: transparent;
-    color: #0a151f;
+    color: #041424;
     font-weight: 600;
     border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 }
 
 .login-register {
     font-size: 0.9em;
-    color: #0a151f;
+    color: #041424;
     font-weight: 500;
     text-align: center;
     margin: 25px 0 10px;
 }
 
 .login-register p a {
-    color: #0a151f;
+    color: #041424;
     text-decoration: none;
     font-weight: 600;
     margin-left: 3px;
